@@ -1,8 +1,9 @@
-import { Container } from '@mui/material'
+import { Button, Container } from '@mui/material'
 import axios from 'axios';
 import { Link, Route, Routes} from 'react-router-dom';
 import React, { useEffect, useState } from 'react'
 import ClientRow from './ClientRow';
+import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
 
 export const ClientsList:React.FunctionComponent = ({children}) => {
   const baseURL = "https://localhost:5001/api/Clients";
@@ -20,8 +21,14 @@ export const ClientsList:React.FunctionComponent = ({children}) => {
     },[])
   return (
     <>
-    <h1 className='text-4xl font-bold'>{children}</h1>
       <Container>
+        <h1 className='text-4xl font-bold'>{children}</h1>
+
+        <div className="flex flex-row">
+              <input className="flex flex-col my-5 placeholder:italic placeholder:text-slate-400 bg-white border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm w-3/5" placeholder="Search for Username..." type="text" name="search"/>
+              <button  className=' mx-10 my-5 bg-blue-300 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded'>Create Client <PersonAddAltIcon /></button>
+        </div>
+      
       <div className="flex flex-col">
         <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
           <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">

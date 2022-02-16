@@ -6,7 +6,6 @@ import ClearIcon from '@mui/icons-material/Close';
 import { green, red } from '@mui/material/colors';
 
 const AccountsList = ({account}:any) => {
-    console.log(account)
   return (
     <>
         <td className="px-6 py-4 whitespace-nowrap">
